@@ -1,4 +1,7 @@
 {
+    "files.exclude": {
+    "**/*.exe": true
+},
     "editor.fontFamily": "FiraCode Nerd Font",
     "editor.cursorBlinking": "expand",
 }
