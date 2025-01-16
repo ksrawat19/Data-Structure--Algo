@@ -26,6 +26,12 @@ class BST{
         }
     }
 
+    void deletion(Node* root, int key){
+        if(root->data==key){
+            
+        }
+    }
+
     // Traversal
     void inOrderTraversal(Node* root){
         if(root==nullptr){
