@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
 struct Node{
@@ -57,6 +58,52 @@ class BST{
         postOrderTraversal(root->right);
         cout<<root->data<<" ";
     }
+    void levelOrderTraversal(Node* root){
+        if(root==nullptr){
+            return;
+        }
+        queue<Node*> q;
+        q.push(root);
+         
+        while(!q.empty()){
+            Node* current = q.front();
+            cout<<current->data<<" ";
+            q.pop();
+            if(current->left!=nullptr){
+                q.push(current->left);
+            }
+            if(current->right!=nullptr){
+                q.push(current->right);
+            }
+        }
+    }
+    void levelOrderLineTraversal(Node* root){
+        if(root==nullptr){
+            return;
+        }
+        queue<Node*> q;
+        q.push(root);
+        q.push(nullptr);
+         
+        while(!q.empty()){
+            Node* current = q.front();
+            q.pop();
+            if(current==nullptr){
+                cout<<endl;
+                if(!q.empty()){
+                    q.push(nullptr);
+                }
+            }else{
+                if(current->left!=nullptr){
+                    q.push(current->left);
+                }
+                if(current->right!=nullptr){
+                    q.push(current->right);
+                }
+                cout<<current->data<<" ";
+            }
+        }
+    }
 
     public:
     BST(): root(nullptr) {}
@@ -77,6 +124,14 @@ class BST{
         postOrderTraversal(root);
         cout<<endl;
     }
+    void levelOrderTraversal(){
+        levelOrderTraversal(root);
+        cout<<endl;
+    }
+    void levelOrderLineTraversal(){
+        levelOrderLineTraversal(root);
+        cout<<endl;
+    }
 };
 int main() {
     BST tree;
@@ -94,6 +149,8 @@ int main() {
     tree.inOrderTraversal();
     tree.preOrderTraversal();
     tree.postOrderTraversal();
+    tree.levelOrderTraversal();
+    tree.levelOrderLineTraversal();
 
     return 0;
 }
