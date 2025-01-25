@@ -1,3 +1,5 @@
+// 📂 Program 1: Reverse Linked List (Leetcode-206)
+
 #include <iostream>
 using namespace std;
 
@@ -28,9 +30,12 @@ class LinkedList{
     }
 
     void reverse(){
+        if(!head || !head->next){
+            return;
+        }
         Node* prev = nullptr;
         Node* curr = head;
-        while(head!=nullptr){
+        while(curr!=nullptr){
             head = head->next;
             curr->next = prev;
             prev = curr;
@@ -38,6 +43,7 @@ class LinkedList{
         }
         head = prev;
     }
+    // A L S O
     // void reverse() {
     // Node* prev = nullptr;
     // Node* curr = nullptr;
@@ -50,10 +56,17 @@ class LinkedList{
     // }
     // head = prev; 
     // }
-    void reverseRecursively(){
-        // to be continued..
+    void reverseRecursively(Node* prev, Node* curr){
+        if(!curr){
+            head = prev;
+            return;
+        }
+        Node* nextNode = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextNode;
+        reverseRecursively(prev, curr);
     }
-
 
     void printLL(){
         if(head==nullptr){
@@ -66,6 +79,10 @@ class LinkedList{
             temp = temp->next;
         }
         cout<<endl;
+    }
+    // Helper Function to Call Reverse Recursively
+    void reverseRecursively(){
+        reverseRecursively(nullptr, head);
     }
 };
 
@@ -80,7 +97,7 @@ int main() {
     cout<<"Before reverse : ";
     ll.printLL();
 
-    ll.reverse();
+    ll.reverseRecursively();
     cout<<"After reverse : ";
     ll.printLL();
 
