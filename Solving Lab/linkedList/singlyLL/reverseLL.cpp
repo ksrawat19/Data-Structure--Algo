@@ -65,7 +65,7 @@ class LinkedList{
         curr->next = prev;
         prev = curr;
         curr = nextNode;
-        reverseRecursively(prev, curr);
+        return reverseRecursively(prev, curr);
     }
 
     void printLL(){
