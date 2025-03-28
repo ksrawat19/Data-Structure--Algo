@@ -1,4 +1,3 @@
-// only if the weight of all the edges is same
 #include <iostream>
 #include <unordered_map>
 #include <list>
