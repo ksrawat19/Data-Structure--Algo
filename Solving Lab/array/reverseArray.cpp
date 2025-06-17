@@ -38,3 +38,10 @@ int main(){
     
     return 0;
 }
+
+// also
+// M2 --> reverse(nums.begin(), nums.end());
+
+// M3 --> Recursion 
+
+// M4 --> Stack
