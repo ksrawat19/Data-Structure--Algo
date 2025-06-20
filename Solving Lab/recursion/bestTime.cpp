@@ -12,7 +12,7 @@ int bestTime(vector<int>& p, int i, int minPrice, int maxPrice){
 }
 
 int main(){
-    vector<int> prices{1, 2};
+    vector<int> prices{7,1,5,3,6,4};
 
     cout<< bestTime(prices, 1, prices[0], 0) <<endl;
     return 0;
