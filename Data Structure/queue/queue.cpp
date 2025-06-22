@@ -52,7 +52,7 @@ class Queue{
     }
 
     bool isEmpty(){
-        if(rearIndex==-1){
+        if(rearIndex==-1 || frontIndex>rearIndex){
             return true;
         }
         return false;
