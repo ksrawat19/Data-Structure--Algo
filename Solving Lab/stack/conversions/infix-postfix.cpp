@@ -58,9 +58,10 @@ string infixToPostfix(string infix) {
 }
 
 int main() {
-  string exp = "a ^ b ^ c";
-//   string exp = "A - B + C";
-  cout << "Infix expression: " << exp << endl;
-  cout<<infixToPostfix(exp);
+    string exp = "a ^ b ^ c";
+    // string exp = "A - B + C";
+    // string expr = "(A-B/C)*(A/K-L)";
+    cout << "Infix expression: " << exp << endl;
+    cout << "Postfix: " << infixToPostfix(exp) << endl;
   return 0;
 }
